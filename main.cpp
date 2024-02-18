@@ -6,14 +6,13 @@
 void add(std::map<std::string, std::string>& Coins, std::string key, std::string value) {
 
 	Coins.insert(std::make_pair(key, value));
-
 }
+
 
 void get_all(const std::map<std::string, std::string>& Coins) {
 
 	for (const auto& [key, value] : Coins)
-        std::cout << '[' << key << "] = " << value << "; " << "\n" << std::endl;
-
+        std::cout << '[' << key << "] => " << value << "; " << "\n" << std::endl;
 }
 
 
@@ -23,7 +22,6 @@ int main() {
 	std::string key;
 	std::string value;
 	std::map<std::string, std::string> Coins;
-
 
 
 	while (choice != 9) {
@@ -39,11 +37,14 @@ int main() {
 		switch (choice) {
 
 		case 1:
-			std::cout << "Insira a chave" << "\n\n" << std::endl;
+			std::cout << "Insira a chave" << std::endl;
 			std::cin >> key;
+			std::cout << "\n" << std::endl;
 
-			std::cout << "Insira o valor" << "\n\n" << std::endl;
+			std::cout << "Insira o valor" << std::endl;
 			std::cin >> value;
+			std::cout << "\n" << std::endl;
+
 
 			add(Coins, key, value);
 			break;
