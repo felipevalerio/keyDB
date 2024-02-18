@@ -9,7 +9,7 @@ void add(std::map<std::string, std::string>& Coins, std::string key, std::string
 }
 
 
-void get_all(const std::map<std::string, std::string>& Coins) {
+void get_all(std::map<std::string, std::string>& Coins) {
 
 	for (const auto& [key, value] : Coins)
         std::cout << '[' << key << "] => " << value << "; " << "\n" << std::endl;
