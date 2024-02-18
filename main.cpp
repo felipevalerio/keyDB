@@ -5,7 +5,7 @@
 
 void add(const std::map<std::string, std::string>& Coins, std::string key, std::string value) {
 
-	Coins.insert(make_pair(key, value));
+	Coins.insert(std::make_pair(key, value));
 
 }
 
@@ -30,6 +30,7 @@ int main() {
 	std::cin >> value;
 
 	add(Coins, key, value);
+	get_all(Coins);
 
 	return 0;
 }
