@@ -3,25 +3,33 @@
 #include <map>
 
 
-void insert(std::string key, std::string value) {
+void add(const std::map<std::string, std::string>& Coins, std::string key, std::string value) {
 
-	std::map<std::string, std::string> Coins;
 	Coins.insert(make_pair(key, value));
 
 }
+
+void get_all(const std::map<std::string, std::string>& Coins) {
+
+	for (const auto& [key, value] : Coins)
+        std::cout << '[' << key << "] = " << value << "; ";
+
+}
+
 
 int main() {
 
 	std::string key;
 	std::string value;
+	std::map<std::string, std::string> Coins;
 
-	std::cout << "Insira a nome da criptomoeada" << "\n\n" << std::endl;
+	std::cout << "Insira a chave" << "\n\n" << std::endl;
 	std::cin >> key;
 
-	std::cout << "Insira o valor da criptomoeda" << "\n\n" << std::endl;
+	std::cout << "Insira o valor" << "\n\n" << std::endl;
 	std::cin >> value;
 
-	insert(key, value);
+	add(Coins, key, value);
 
 	return 0;
 }
