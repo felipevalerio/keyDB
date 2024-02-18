@@ -12,25 +12,48 @@ void add(std::map<std::string, std::string>& Coins, std::string key, std::string
 void get_all(const std::map<std::string, std::string>& Coins) {
 
 	for (const auto& [key, value] : Coins)
-        std::cout << '[' << key << "] = " << value << "; ";
+        std::cout << '[' << key << "] = " << value << "; " << "\n" << std::endl;
 
 }
 
 
 int main() {
 
+	int choice = 0;
 	std::string key;
 	std::string value;
 	std::map<std::string, std::string> Coins;
 
-	std::cout << "Insira a chave" << "\n\n" << std::endl;
-	std::cin >> key;
 
-	std::cout << "Insira o valor" << "\n\n" << std::endl;
-	std::cin >> value;
 
-	add(Coins, key, value);
-	get_all(Coins);
+	while (choice != 9) {
+
+		std::cout 
+		<< 	"1)Insert" << "\n" 
+		<< 	"2)List values" << "\n" 
+		<< 	"9)Sair" << "\n" 
+		<< std::endl;
+
+		std::cin >> choice;
+
+		switch (choice) {
+
+		case 1:
+			std::cout << "Insira a chave" << "\n\n" << std::endl;
+			std::cin >> key;
+
+			std::cout << "Insira o valor" << "\n\n" << std::endl;
+			std::cin >> value;
+
+			add(Coins, key, value);
+			break;
+		case 2:
+			
+			get_all(Coins);
+			break;
+		}
+	}
+
 
 	return 0;
 }
