@@ -29,7 +29,7 @@ int main() {
 		std::cout 
 		<< 	"1)Insert" << "\n" 
 		<< 	"2)List values" << "\n" 
-		<< 	"9)Sair" << "\n" 
+		<< 	"9)Exit" << "\n" 
 		<< std::endl;
 
 		std::cin >> choice;
@@ -54,7 +54,6 @@ int main() {
 			break;
 		}
 	}
-
 
 	return 0;
 }
