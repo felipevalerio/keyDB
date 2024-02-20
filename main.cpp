@@ -12,7 +12,7 @@ void add(std::map<std::string, std::string>& Coins, std::string key, std::string
 		std::ofstream outputFile("db_file/db.txt");
 
 		for (const auto& pair : Coins) {
-			outputFile << pair.first << "" << pair.second << "\n";
+			outputFile << pair.first << " " << pair.second << "\n";
 		}
 		
 		outputFile.close();
@@ -23,8 +23,17 @@ void add(std::map<std::string, std::string>& Coins, std::string key, std::string
 	
 }
 
+//std::map<std::string, std::string>& Coins
+void get_all() {
 
-void get_all(std::map<std::string, std::string>& Coins) {
+	std::string key;
+	std::string value;
+	std::map<std::string, std::string>Coins;
+	std::ifstream inputFile("db_file/db.txt");
+
+
+	while(inputFile >> key >> value)
+		Coins[key] = value;
 
 	for (const auto& [key, value] : Coins)
         std::cout << '[' << key << "] => " << value << "; " << "\n" << std::endl;
@@ -65,7 +74,7 @@ int main() {
 			break;
 		case 2:
 			
-			get_all(Coins);
+			get_all();
 			break;
 		}
 	}
