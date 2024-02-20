@@ -1,11 +1,26 @@
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <map>
 
 
 void add(std::map<std::string, std::string>& Coins, std::string key, std::string value) {
-
+	
 	Coins.insert(std::make_pair(key, value));
+
+	try {
+		std::ofstream outputFile("db_file/db.txt");
+
+		for (const auto& pair : Coins) {
+			outputFile << pair.first << "" << pair.second << "\n";
+		}
+		
+		outputFile.close();
+	}
+	catch(const std::exception& e) {
+		std::cerr << e.what() << '\n';
+	}
+	
 }
 
 
