@@ -23,10 +23,16 @@ void add(std::map<std::string, std::string>& Coins, std::string key, std::string
 
 void get_all(std::map<std::string, std::string>& Coins) {
 
-	std::ifstream binaryInput("db_file/db.bin", std::ios::binary);
-	binaryInput.read(reinterpret_cast<char*>(&Coins), sizeof(Coins));
-	binaryInput.close();
-	
+	try {
+		std::ifstream binaryInput("db_file/db.bin", std::ios::binary);
+
+		binaryInput.read(reinterpret_cast<char*>(&Coins), sizeof(Coins));
+		binaryInput.close();
+	}
+	catch(const std::exception& e) {
+		std::cerr << e.what() << '\n';
+	}
+
 	for (const auto& [key, value] : Coins)
         std::cout << '[' << key << "] => " << value << "; " << "\n" << std::endl;
 }
