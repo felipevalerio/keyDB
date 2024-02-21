@@ -6,7 +6,8 @@
 
 void add(std::map<std::string, std::string>& Coins, std::string key, std::string value) {
 	
-	Coins.insert(std::make_pair(key, value));
+	Coins.emplace(key, value);
+	//Coins.insert(std::make_pair(key, value));
 
 	try {
 		std::ofstream outputFile("db_file/db.txt");
