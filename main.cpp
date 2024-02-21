@@ -7,16 +7,12 @@
 void add(std::map<std::string, std::string>& Coins, std::string key, std::string value) {
 	
 	Coins.emplace(key, value);
-	//Coins.insert(std::make_pair(key, value));
 
 	try {
-		std::ofstream outputFile("db_file/db.txt");
+		std::ofstream binaryOutput("db_file/db.bin", std::ios::binary);
 
-		for (const auto& pair : Coins) {
-			outputFile << pair.first << " " << pair.second << "\n";
-		}
-		
-		outputFile.close();
+		binaryOutput.write(reinterpret_cast<const char*>(&Coins), sizeof(Coins));
+		binaryOutput.close();
 	}
 	catch(const std::exception& e) {
 		std::cerr << e.what() << '\n';
@@ -24,7 +20,7 @@ void add(std::map<std::string, std::string>& Coins, std::string key, std::string
 	
 }
 
-//std::map<std::string, std::string>& Coins
+
 void get_all() {
 
 	std::string key;
