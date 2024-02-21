@@ -21,17 +21,12 @@ void add(std::map<std::string, std::string>& Coins, std::string key, std::string
 }
 
 
-void get_all() {
+void get_all(std::map<std::string, std::string>& Coins) {
 
-	std::string key;
-	std::string value;
-	std::map<std::string, std::string>Coins;
-	std::ifstream inputFile("db_file/db.txt");
-
-
-	while(inputFile >> key >> value)
-		Coins[key] = value;
-
+	std::ifstream binaryInput("db_file/db.bin", std::ios::binary);
+	binaryInput.read(reinterpret_cast<char*>(&Coins), sizeof(Coins));
+	binaryInput.close();
+	
 	for (const auto& [key, value] : Coins)
         std::cout << '[' << key << "] => " << value << "; " << "\n" << std::endl;
 }
@@ -71,7 +66,7 @@ int main() {
 			break;
 		case 2:
 			
-			get_all();
+			get_all(Coins);
 			break;
 		}
 	}
