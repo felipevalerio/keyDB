@@ -4,7 +4,7 @@
 #include <map>
 
 
-void add(std::map<std::string, std::string>& Coins, std::string key, std::string value) {
+void put(std::map<std::string, std::string>& Coins, std::string key, std::string value) {
 	
 	Coins.emplace(key, value);
 
@@ -18,6 +18,11 @@ void add(std::map<std::string, std::string>& Coins, std::string key, std::string
 		std::cerr << e.what() << '\n';
 	}
 	
+}
+
+
+void del(std::string key, std::map<std::string, std::string>& Coins) {
+
 }
 
 
@@ -50,7 +55,8 @@ int main() {
 
 		std::cout 
 		<< 	"1)Insert" << "\n" 
-		<< 	"2)List values" << "\n" 
+		<< 	"2)List values" << "\n"
+		<< 	"3)Delete" << "\n" 
 		<< 	"9)Exit" << "\n" 
 		<< std::endl;
 
@@ -68,12 +74,16 @@ int main() {
 			std::cout << "\n" << std::endl;
 
 
-			add(Coins, key, value);
+			put(Coins, key, value);
 			break;
 		case 2:
 			
 			get_all(Coins);
 			break;
+		
+		case 3:
+
+			del(key, Coins);
 		}
 	}
 
