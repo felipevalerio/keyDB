@@ -17,12 +17,22 @@ void put(std::map<std::string, std::string>& Coins, std::string key, std::string
 	catch(const std::exception& e) {
 		std::cerr << e.what() << '\n';
 	}
-	
 }
 
 
 void del(std::string key, std::map<std::string, std::string>& Coins) {
 
+	try {
+		std::ifstream binaryInput("db_file/db.bin", std::ios::binary);
+
+		binaryInput.read(reinterpret_cast<char*>(&Coins), sizeof(Coins));
+		binaryInput.close();
+
+		Coins.erase(key);
+	}
+	catch(const std::exception& e) {
+		std::cerr << e.what() << '\n';
+	}
 }
 
 
@@ -73,7 +83,6 @@ int main() {
 			std::cin >> value;
 			std::cout << "\n" << std::endl;
 
-
 			put(Coins, key, value);
 			break;
 		case 2:
@@ -83,7 +92,12 @@ int main() {
 		
 		case 3:
 
+			std::cout << "Insira a chave que deseja deletar" << std::endl;
+			std::cin >> key;
+			std::cout << "\n" << std::endl;
+
 			del(key, Coins);
+			break;
 		}
 	}
 
