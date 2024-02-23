@@ -9,7 +9,7 @@ void put(std::map<std::string, std::string>& Coins, std::string key, std::string
 	Coins.emplace(key, value);
 
 	try {
-		std::ofstream binaryOutput("db_file/db.bin", std::ios::binary);
+		std::ofstream binaryOutput("/storage/db_file/db.bin", std::ios::binary);
 
 		binaryOutput.write(reinterpret_cast<const char*>(&Coins), sizeof(Coins));
 		binaryOutput.close();
@@ -23,7 +23,7 @@ void put(std::map<std::string, std::string>& Coins, std::string key, std::string
 void del(std::string key, std::map<std::string, std::string>& Coins) {
 
 	try {
-		std::ifstream binaryInput("db_file/db.bin", std::ios::binary);
+		std::ifstream binaryInput("/storage/db_file/db.bin", std::ios::binary);
 
 		binaryInput.read(reinterpret_cast<char*>(&Coins), sizeof(Coins));
 		binaryInput.close();
