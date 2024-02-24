@@ -39,7 +39,7 @@ void del(std::string key, std::map<std::string, std::string>& Coins) {
 void get_all(std::map<std::string, std::string>& Coins) {
 
 	try {
-		std::ifstream binaryInput("db_file/db.bin", std::ios::binary);
+		std::ifstream binaryInput("/storage/db_file/db.bin", std::ios::binary);
 
 		binaryInput.read(reinterpret_cast<char*>(&Coins), sizeof(Coins));
 		binaryInput.close();
