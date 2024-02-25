@@ -22,7 +22,7 @@ void storage::put(std::map<std::string, std::string>& Coins, std::string key, st
 }
 
 
-void storage::el(std::string key, std::map<std::string, std::string>& Coins) {
+void del(std::string key, std::map<std::string, std::string>& Coins) {
 
 	try {
 		std::ifstream binaryInput("/db_file/db.bin", std::ios::binary);
@@ -38,7 +38,7 @@ void storage::el(std::string key, std::map<std::string, std::string>& Coins) {
 }
 
 
-void storage::get_all(std::map<std::string, std::string>& Coins) {
+void get_all(std::map<std::string, std::string>& Coins) {
 
 	try {
 		std::ifstream binaryInput("/db_file/db.bin", std::ios::binary);
