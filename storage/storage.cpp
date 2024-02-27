@@ -4,9 +4,8 @@
 #include <iostream>
 #include "storage.h"
 
-using namespace storage;
 
-void storage::put(std::map<std::string, std::string>& Coins, std::string key, std::string value) {
+void put(std::map<std::string, std::string>& Coins, std::string key, std::string value) {
 	
 	Coins.emplace(key, value);
 
