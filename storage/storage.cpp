@@ -2,7 +2,7 @@
 #include <string>
 #include <fstream>
 #include <iostream>
-#include "storage/storage.h"
+#include "storage.h"
 
 
 void put(std::map<std::string, std::string>& Coins, std::string key, std::string value) {
