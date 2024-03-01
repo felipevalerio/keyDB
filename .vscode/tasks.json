@@ -8,9 +8,11 @@
                 "-fcolor-diagnostics",
                 "-fansi-escape-codes",
                 "-g",
-                "${file}",
+                "main.cpp",
+                "storage/storage.h",
+                "storage/storage.cpp",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "main.exe"
             ],
             "options": {
                 "cwd": "${fileDirname}"
