@@ -19,15 +19,6 @@
 // else will be ignored.
 CMAKE_CONFIGURATION_TYPES:STRING=Debug;Release;MinSizeRel;RelWithDebInfo
 
-//No help, variable specified on the command line.
-CMAKE_CXX_COMPILER:FILEPATH=A:/LLVM/bin/clang++.exe
-
-//No help, variable specified on the command line.
-CMAKE_C_COMPILER:FILEPATH=A:/LLVM/bin/clang.exe
-
-//No help, variable specified on the command line.
-CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE
-
 //Value Computed by CMake.
 CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=C:/Users/Pichau/Documents/C++/key-value-store/build/CMakeFiles/pkgRedirects
 
@@ -62,7 +53,7 @@ key-value-store_BINARY_DIR:STATIC=C:/Users/Pichau/Documents/C++/key-value-store/
 key-value-store_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-key-value-store_SOURCE_DIR:STATIC=C:/Users/Pichau/Documents/C++/key-value-store
+key-value-store_SOURCE_DIR:STATIC=C:/Users/Pichau/Documents/C++/key-value-store/build
 
 
 ########################
@@ -90,12 +81,12 @@ CMAKE_GENERATOR:INTERNAL=Visual Studio 16 2019
 //Generator instance identifier.
 CMAKE_GENERATOR_INSTANCE:INTERNAL=
 //Name of generator platform.
-CMAKE_GENERATOR_PLATFORM:INTERNAL=
+CMAKE_GENERATOR_PLATFORM:INTERNAL=x64
 //Name of generator toolset.
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
 //Source directory with the top level CMakeLists.txt file for this
 // project
-CMAKE_HOME_DIRECTORY:INTERNAL=C:/Users/Pichau/Documents/C++/key-value-store
+CMAKE_HOME_DIRECTORY:INTERNAL=C:/Users/Pichau/Documents/C++/key-value-store/build
 //number of local generators
 CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
 //Platform information initialized
