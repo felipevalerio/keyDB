@@ -7,9 +7,9 @@
             "args": [
                 "-fcolor-diagnostics",
                 "-fansi-escape-codes",
-                "${workspaceFolder}/main.cpp",
-                "${workspaceFolder}/storage/storage.h",
-                "${workspaceFolder}/storage/storage.cpp",
+                "${workspaceFolder}/src/main.cpp",
+                "${workspaceFolder}/src/storage/storage.h",
+                "${workspaceFolder}/src/storage/storage.cpp",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],

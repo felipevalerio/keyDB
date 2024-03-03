@@ -50,5 +50,6 @@
 	"cmake.configureOnOpen": true,
 	"cmake.cmakePath": "C:/Program Files/CMake/bin/cmake.exe",
 	"cmake.generator": "Visual Studio 16 2019",
-	"C_Cpp.default.compilerPath": "A:\\LLVM\\bin\\clang++.exe"
+	"C_Cpp.default.compilerPath": "A:\\LLVM\\bin\\clang++.exe",
+	"cmake.sourceDirectory": "C:/Users/Pichau/Documents/C++/key-value-store/build"
 }
