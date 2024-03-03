@@ -10,6 +10,7 @@
                 "-g",
                 "${workspaceFolder}/src/*.cpp",
                 "${workspaceFolder}/src/storage/*.cpp",
+                //"${workspaceFolder}/src/storage/*.hpp",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],
