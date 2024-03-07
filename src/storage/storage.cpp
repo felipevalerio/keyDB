@@ -21,22 +21,6 @@ void put(std::map<std::string, std::string>& Map, std::string key, std::string v
 }
 
 
-void del(std::string key, std::map<std::string, std::string>& Map) {
-
-	try {
-		std::ifstream binaryInput("/db_file/db.bin", std::ios::binary);
-
-		binaryInput.read(reinterpret_cast<char*>(&Map), sizeof(Map));
-		binaryInput.close();
-
-		Map.erase(key);
-	}
-	catch(const std::exception& e) {
-		std::cerr << e.what() << '\n';
-	}
-}
-
-
 void get_all(std::map<std::string, std::string>& Map) {
 
 	try {
@@ -51,4 +35,20 @@ void get_all(std::map<std::string, std::string>& Map) {
 
 	for (const auto& [key, value] : Map)
         std::cout << '[' << key << "] => " << value << "; " << "\n" << std::endl;
+}
+
+
+void del(std::string key, std::map<std::string, std::string>& Map) {
+
+	try {
+		std::ifstream binaryInput("/db_file/db.bin", std::ios::binary);
+
+		binaryInput.read(reinterpret_cast<char*>(&Map), sizeof(Map));
+		binaryInput.close();
+
+		Map.erase(key);
+	}
+	catch(const std::exception& e) {
+		std::cerr << e.what() << '\n';
+	}
 }
