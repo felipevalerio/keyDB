@@ -1,8 +1,8 @@
 #include <map>
 #include <string>
 
-	void put(std::map<std::string, std::string>, std::string, std::string);
+	inline void put(std::map<std::string, std::string>Map, std::string key, std::string value);
 
-	void get_all(std::map<std::string, std::string>);
+	inline void get_all(std::map<std::string, std::string>Map);
 
-	void del(std::string, std::map<std::string, std::string>);
+	inline void del(std::string key, std::map<std::string, std::string>Map);
